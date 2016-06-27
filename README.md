@@ -70,6 +70,14 @@ This code I made for the short Data Science interview challenge
     (pc.rob <- princomp(test1, covmat = MASS::cov.rob(test1)))  ## Robust
     biplot(pc.rob, main = "PC robust ")
 
+    require(leaps)
+    library(devtools)
+    install_github("ggbiplot", "vqv")
+    install.packages("vqv-ggbiplot-2623d7c.tar.gz", repos=NULL, type="source")
+    library(ggbiplot)
+    ggbiplot(pca1)
+    ggbiplot(pca2)
+   
     test1 <- test
     test1$y <- NULL  ## we need test without y for predict PCA
     pred1<-predict(pca1, test1)
@@ -77,3 +85,18 @@ This code I made for the short Data Science interview challenge
     plot(pred1, pred2)
     ggscreeplot(pca1, main = "ggscreeplot for PCA1")
     print(ggscreeplot(pca1), main = 123)
+    
+    ##  hierarchical cluster dendrogram
+    d <- dist(data_bbb[,1:4], method="euclidean")
+    d
+    treeW <- hclust(d, method="ward.D2")
+    plot(treeW, xlab="")
+    rect.hclust(treeW, k=3, border="red")
+
+    treeA <- hclust(d, method ="ave")
+    data_bbb$hcluster <- as.factor((cutree(tree, k=3)-2) %% 3 +1)
+    plot(treeA, xlab= "")
+    rect.hclust(treeA, k=3, border ="green")
+
+
+    
