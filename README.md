@@ -1,19 +1,23 @@
 # Interview-code-challenge
 This code I made for the short Data Science interview challenge
 
-data_bbb <- read.csv("~//Desktop/R/challenge.csv", header = T, sep=",", stringsAsFactors = F)
-head(data_bbb, 10)
-apply(data_bbb, 2, mean)
-apply(data_bbb, 2, var)
-dim(data_bbb)
-summary(data_bbb)
-names(data_bbb)[1] <- "y" ## I change response on y 
-data_bbb
+    data_bbb <- read.csv("~//Desktop/R/challenge.csv", header = T, sep=",", stringsAsFactors = F)
+    head(data_bbb, 10)
+    apply(data_bbb, 2, mean)
+    apply(data_bbb, 2, var)
+    dim(data_bbb)
+    summary(data_bbb)
+    names(data_bbb)[1] <- "y" ## I change response on y 
+    data_bbb
 
 ## data visualisation
-library(corrgram) 
-corrgram(data_bbb, order = NULL, lower.panel=panel.shade,
+     library(corrgram) 
+     corrgram(data_bbb, order = NULL, lower.panel=panel.shade,
          upper.panel=NULL, text.panel = panel.txt)
+     corrgram(data_bbb, order = TRUE, lower.panel=panel.shade,
+         upper.panel=panel.pie, text.panel = panel.txt, main = "Sorted order")
+         
+         
 
 ## visualizing plot of misssing data in this set
 library(Amelia)
