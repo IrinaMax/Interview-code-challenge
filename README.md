@@ -86,7 +86,7 @@ This code I made for the short Data Science interview challenge
     ggscreeplot(pca1, main = "ggscreeplot for PCA1")
     print(ggscreeplot(pca1), main = 123)
     
-    ##  hierarchical cluster dendrogram
+Hierarchical cluster dendrogram
     d <- dist(data_bbb[,1:4], method="euclidean")
     d
     treeW <- hclust(d, method="ward.D2")
