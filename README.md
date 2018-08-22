@@ -31,7 +31,7 @@ This code I made for the short Data Science interview challenge
 ## I will change tha letters lablesn to 123
     data_b1 <-within(data_bbb1, y <- factor(y, labels = c(1,2,3)))
     data_b1
-##Split Data on the 3 part, I use one as train
+## Split Data on the 3 part, I use one as train
     list <- split(data_b1, data_b1$y)
     list[[2]]
     train1 <-list[[2]]
@@ -58,6 +58,7 @@ This code I made for the short Data Science interview challenge
     pca1$sd^2                  # component variances
     screeplot(pca1)
     screeplot(pca2)
+    
 # if you would like a scree plot
     plot(pca1,type="lines")    # scree plot in lines
     pca2$scores             # the principal components
@@ -79,7 +80,7 @@ This code I made for the short Data Science interview challenge
     ggbiplot(pca2)
    
     test1 <- test
-    test1$y <- NULL  ## we need test without y for predict PCA
+    test1$y <- NULL     ## we need test without y for predict PCA
     pred1<-predict(pca1, test1)
     pred2<-predict(pca2, test)
     plot(pred1, pred2)
