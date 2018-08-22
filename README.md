@@ -62,7 +62,7 @@ This code I made for the short Data Science interview challenge
     plot(pca1,type="lines")    # scree plot in lines
     pca2$scores             # the principal components
 
-##biplot
+## biplot
     require(graphics)
     biplot(pca1$x, pca2$scores)
     biplot(pca1, choices = 1:2, scale = 1,  main = "PCA1 with prcomp")  
@@ -86,7 +86,7 @@ This code I made for the short Data Science interview challenge
     ggscreeplot(pca1, main = "ggscreeplot for PCA1")
     print(ggscreeplot(pca1), main = 123)
     
-##Hierarchical cluster dendrogram
+## Hierarchical cluster dendrogram
     d <- dist(data_bbb[,1:4], method="euclidean")
     d
     treeW <- hclust(d, method="ward.D2")
